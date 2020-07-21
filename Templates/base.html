@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{  url_for('static',filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{  url_for('static',filename='css/master.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{  url_for('static',filename='css/bootstrap.css') }}"
+    />
+
+  {% if custom_css %}
+    <link
+      rel="stylesheet"
+      href="{{  url_for('static',filename='css/'+custom_css+'.css') }}"
+    />
+  {% endif%}
+
+    <title>{{ titre }}</title>
+  </head>
+
+  <body>
+<nav class="navbar navbar-dark navbar-expand-md bg-success justify-content-between">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+    
+        </div>
+        <a href="/" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25">TODO</a>
+        <div class="navbar-collapse collapse dual-nav w-50 order-2">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-twitter"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="fa fa-github"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    {% block body %} {% endblock %}
+    
+    <script src="{{  url_for('static',filename='javascript/jquery.min.js') }}"></script>
+    <script src="{{  url_for('static',filename='javascript/bootstrap.js') }}"></script>
+    <script src="{{  url_for('static',filename='javascript/main.js') }}"></script>
+    <script src="{{  url_for('static',filename='javascript/master.js') }}"></script>
+  
+    </body>
+    <!-- Footer
+   
+     -->
+<footer class="page-footer font-small bg-success text-white" >
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://www.facebook.com/walid.menghour3"> TODO </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>
+<!--
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+
+
+-->

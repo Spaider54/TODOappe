@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+
+  <div class="SearchTodo" role="alert">
+Hello From HomePage File ***
+<div class="input-group">
+  
+  <input type="search" aria-label="Search" class="form-control search-styling">
+  <div class="input-group-prepend">
+  <button class="input-group-text">Search</button>
+   
+  </div>
+</div>
+    </div>
+
+<!-- Button trigger modal
+<a href="/add"> 
+<button type="button" class="btn btn-success rounded">
+ADD TODO 
+</button>
+</a> 
+ -->
+
+<br><br>
+
+
+
+<br><br>
+
+
+
+
+
+    <div class="row">
+{% for todoitem in TODOliste %}
+
+      <div class="col-md-4 divtodo">
+        <div class="card" >
+        {% if todoitem.getimg() %}
+          <img src="{{ url_for('static', filename="/images/"+todoitem.getimg())}}" class="card-img-top" alt="{{todoitem.gettitle().upper() }}">
+          {% endif %}
+          <div class="card-body bg-success text-white">
+            <h5 class="card-title">{{todoitem.gettitle().upper() }}</h5>
+            <p>{{todoitem.getdiscription()}}</p>
+           
+          </div>
+    <div class="card-footer">
+      <small>Last updated {{ todoitem.gettime()}}</small>
+    </div>
+        </div>
+      </div>
+     
+      {% endfor %}
+       </div>
+<br><br>
+<!--
+<form action="/add" method="post"   enctype = "multipart/form-data">
+    <label for="ititle">Title :</label>
+    <input type="text" name="ititle" required><br>
+     <label for="iimg">Image :</label>
+    <input type="file" name="iimg" required><br>
+   
+     <label for="idis">Description :</label>
+   <textarea type="text" name="idis" rows="4" cols="50" required>
+    </textarea><br>
+    <input type="submit" class="btn btn-success rounded">
+
+</form>
+
+
+-->
+
+
+
+
+
+       
+</div>
+{% endblock %}
